@@ -1,0 +1,1 @@
+# Seminário 2 — Projeto e Análise de Algoritmos (PROCC0083 - UFS)
