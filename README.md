@@ -107,30 +107,6 @@ A solução é construída incrementalmente:
 3. Em seguida, `3` adjacente a `2`, e assim por diante, até `N`.
 4. Quando alguma escolha leva a um estado sem solução possível, o algoritmo **retrocede** (backtrack) e tenta uma alternativa.
 
-Esboço do algoritmo:
-
-```python
-def solve_hidato(grid, k, N):
-    if k > N:
-        return True  # solução encontrada
-
-    # Se k já é fixo pelo puzzle, apenas avança
-    if grid.has_fixed_position(k):
-        return solve_hidato(grid, k + 1, N)
-
-    # Caso contrário, tenta todas as células adjacentes a k-1
-    for cell in grid.neighbors_of(k - 1):
-        if grid.can_place(k, cell):
-            grid.place(k, cell)
-
-            if solve_hidato(grid, k + 1, N):
-                return True
-
-            grid.remove(k, cell)  # backtrack
-
-    return False  # nenhuma posição levou a solução
-```
-
 ### ⏱️ Complexidade
 
 No pior caso, o algoritmo tem tempo **exponencial**:
