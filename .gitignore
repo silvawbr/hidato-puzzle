@@ -1,0 +1,19 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.pyo
+
+# Environments
+.venv/
+.env/
+.python-version
+
+# OS / Editor stuff
+.DS_Store
+.vscode/
+.idea/
+Thumbs.db
+
+# uv
+.uv/

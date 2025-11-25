@@ -1,0 +1,51 @@
+[project]
+name = "hidato"
+version = "0.1.0"
+description = "Hidato puzzle solver using backtracking"
+readme = "README.md"
+authors = [
+    { name = "Wagner Silva", email = "silvaw.br@gmail.com" },
+    { name = "Wagner Lucena", email = "wagner.ufs.cc@gmail.com" },
+]
+requires-python = ">=3.10"
+dependencies = []
+
+[build-system]
+requires = ["uv_build>=0.8.15,<0.9.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = []
+lint = [
+    "ruff>=0.12.12",
+]
+test = [
+    "hypothesis>=6.138.14",
+    "pytest>=8.4.2",
+    "pytest-benchmark>=5.1.0",
+    "pytest-cov>=6.2.1",
+]
+type = [
+    "pyright>=1.1.405",
+]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+pythonpath = ["src"]
+filterwarnings = ["error"]
+
+[tool.coverage.run]
+source = ["hidato"]
+branch = true
+
+[tool.coverage.report]
+fail_under = 100
+show_missing = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "N", "SIM"]
